@@ -8,9 +8,46 @@ CREATE TABLE
         password TEXT NOT NULL,
         created_at TEXT NOT NULL DEFAULT(DATETIME())
     );
-
+INSERT 
+    id,
+    name,
+    price,
+    description,
+    image_url
+    created_at
+ INTO users
+VALUES (
+        "a001",
+        "LALI-ESPOSITO",
+        "track@lali-esposito.count",
+        "laliADD.music"
+    ), (
+        "a002",
+        "ANITTA",
+        "track@anita.count",
+        "anitaADD.music"
+    ), (
+        "a003",
+        "LUIZA-SONZA",
+        "track@luiza-sonza.count",
+        "sonzaADD.music"
+    ), (
+        "a004",
+        "DUA-LIPA",
+        "track@dua-lipa.count",
+        "dualipaADD.music"
+    ), (
+        "a005",
+        "PK",
+        "track@pk.count",
+        "pkADD.music"
+    );
 SELECT * FROM users;
 
+CREATE TABLE
+    accounts(
+        id TEXT PRIMARY KEY UNIQUE NOT NULL type TEXT
+    )
 CREATE TABLE
     products (
         id TEXT PRIMARY KEY UNIQUE NOT NULL,
@@ -31,6 +68,8 @@ CREATE TABLE
         FOREIGN KEY (buyer) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
     );
 
+SELECT * FROM purchases;
+
 DROP TABLE purchases;
 
 CREATE TABLE
@@ -41,3 +80,5 @@ CREATE TABLE
         FOREIGN KEY (purchase_id) REFERENCES purchases(id) ON DELETE CASCADE ON UPDATE CASCADE,
         FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE ON UPDATE CASCADE
     );
+
+SELECT * FROM purchases_products;

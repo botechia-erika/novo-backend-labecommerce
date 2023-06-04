@@ -1,7 +1,7 @@
-export type TProducts = {
+export type TProduct = {
     id :string,
     name :string,
-    price :string,
+    price: number,
     description: string,
     image_url: string
 }
