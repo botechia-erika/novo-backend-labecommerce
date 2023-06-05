@@ -1,0 +1,6 @@
+router.post('/create', productsController.createProduct)
+router.put('/:id', productsController.editProducts)
+router.get('/', productsControllers.getAll)
+router.get('/details/:id', productsControllers.getDetails)
+router.delete('/:id', products.deleteProduct)
+router.patch('/:id/stock' , products.managerStock)

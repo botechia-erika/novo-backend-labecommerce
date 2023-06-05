@@ -5,12 +5,18 @@ import { db } from "../../database/knex";
 export const createUser = async (req: Request, res: Response) => {
     try {
         const { astro } = req.body
-        const astro1 = { id: astro.id, name: astro.name, email: astro.email, password: astro.password }
-    }catch{
-        if(res.statusCode = 200){
+        const astro1: TUser = { id: astro.id, name: astro.name, email: astro.email, password: astro.password }
+        const itemDB = await db('users').select().where("ID", "LIKE", `${astro1.id}`)
+        if (itemDB === undefined) {
+            let userAceito = astro1
+            await db("users").insert(userAceito)
+        }
+    } catch (err) {
+        if (res.statusCode = 200) {
             res.status(500).send('500 inesperado')
         }
     }
+}
 
 /*
 app.post("/authors/create", async (req: Request, res: Response) => {

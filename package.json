@@ -6,7 +6,17 @@
   "scripts": {
     "start": "tsc & node build/index.js",
     "build": "tsc",
-    "dev": "ts-node-dev src/index.ts"
+    "dev": "ts-node-dev src/index.ts",
+    "meuArgumento": "ts-node-dev src/exercicios/processArgv.ts",
+    "pratica1": "nodemon src/exercicios/a1-pratica1.ts",
+    "pratica2": "nodemon ./src/exercicios/a1-pratica2.ts b",
+    "pratica3": "nodemon ./src/exercicios/a1-pratica3.ts",
+    "exercicio1": "nodemon ./src/exercicios/a1-exercicio1.ts",
+    "exercicio2": "nodemon ./src/exercicios/a1-exercicio2.ts",
+    "exercicio3": "nodemon ./src/exercicios/a1-exercicio3.ts",
+    "fixacao1": "nodemon ./server/fixacao/a1-fixacao1.ts",
+    "dev": "nodemon ./server/index.ts",
+    "paises": "nodemon ./src/exercicios/pratica1.ts"
   },
   "keywords": [
     "labecommerce"
